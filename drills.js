@@ -14,7 +14,10 @@ function main() {
 	SLL.insertLast('Starbuck');
 	// console.log(SLL.head.next.next, 'here in the stars3')
 	SLL.insertLast('Tahida');
-	SLL.remove('squirrel');
+	//SLL.remove('squirrel');
+	// console.log(JSON.stringify(SLL));
+	SLL.insertBefore('Athena','Boomer');
+	SLL.insertAfter('Hotdog','Helo')
 	console.log(JSON.stringify(SLL));
 
 }

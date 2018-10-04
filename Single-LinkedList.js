@@ -10,14 +10,42 @@ class LinkedList {
         this.head = new Node(value, this.head);
     };
 
-    insertBefore(value) {
-        if (this.head === null) {
+    find(item) { 
+        //start at the head
+        let currNode = this.head;
+        //if the list is empty
+        if (!this.head){
             return null;
-        };
+        }
+        //Check for the item 
+        while(currNode.value !== item) {
+            //return null if end of the list 
+            // and the item is not on the list
+            if (currNode.next === null) {
+                return null;
+            }
+            else {
+                //otherwise keep looking 
+                currNode = currNode.next;
+            }
+        }
+        //found it
+        return currNode;
+    }
+//make sure to write out the psudo code first to get a better idea in mind how the code is structured
+    insertBefore(value,key) {
+        
         let tempCurrentNode = this.head;
         let previousNode = this.head;
+        
+        if (this.head === null) {
+            return null;
+        }
 
-        while (find(value) != value) {
+        while (key != tempCurrentNode.value) {
+            if(tempCurrentNode.next === null){
+                return null
+            }
             previousNode = tempCurrentNode
             tempCurrentNode = tempCurrentNode.next
         }
@@ -25,32 +53,21 @@ class LinkedList {
     }
 
 
-    insertAfter(value) {
+    insertAfter(value,key) {
         if (this.head === null) {
             this.insertFirst(value);
         };
         let tempCurrentNode = this.head;
-        let previousNode = this.head;
-        while (find(value) != value) {
+        let nextNode = this.head;
+        while (tempCurrentNode.value != key) {
             tempCurrentNode = tempCurrentNode.next
+            nextNode = tempCurrentNode.next
         }
-        previousNode.next = new Node(value, tempCurrentNode)
+        tempCurrentNode.next = new Node(value, nextNode)
     }
 
 
-    find(value) {
-        let currentNode = this.head
-        if (!this.head) {
-            return null
-        }
-        while (currentNode.value != value) {
-            if (currentNode.next === null) {
-                return null
-            }
-            currentNode = currentNode.next
-        }
-        return currentNode
-    }
+
 
 
     insertLast(value) {
