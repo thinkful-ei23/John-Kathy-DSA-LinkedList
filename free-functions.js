@@ -60,12 +60,15 @@ function findLast(list){
 //set .next to currentNode
 
 function reverseIt(list,currentNode){
-    let previousNode = currentNode.next
     if(currentNode.next === null){
         return list.head = new Node(currentNode, previousNode)
     }
     console.log(previousNode.value)
     return new Node(currentNode, previousNode), reverseIt(list,currentNode.next)
+}
+
+function reverseIt2(list){
+    
 }
 
 
