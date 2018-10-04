@@ -1,13 +1,13 @@
 'use strict'
 
 const LinkedList = require('./Single-LinkedList');
-const {display,size} = require('./free-functions')
+const { display, size, isEmpty, findPrevious } = require('./free-functions')
 
 
 function main() {
 
 	const SLL = new LinkedList
-
+	const TOO = new LinkedList
 	SLL.insertFirst('Apollo');
 	SLL.insertLast('Boomer');
 	SLL.insertLast('Helo');
@@ -22,8 +22,12 @@ function main() {
 	SLL.insertAt('Kat', 3);
 	SLL.remove('Tauhida');
 	// console.log(JSON.stringify(SLL));
-	console.log(display(SLL.head))
+	// console.log(display(SLL.head))
 	size(SLL)
+	isEmpty(SLL);
+	isEmpty(TOO);
+	console.log(findPrevious(SLL, 'Hotdog'))
+
 }
 
 main()
