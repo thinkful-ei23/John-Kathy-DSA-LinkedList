@@ -1,7 +1,7 @@
 'use strict'
 
 const LinkedList = require('./Single-LinkedList');
-const { display, size, isEmpty, findPrevious } = require('./free-functions')
+const { display, size, isEmpty, findPrevious,findLast,reverseIt } = require('./free-functions')
 
 
 function main() {
@@ -23,11 +23,12 @@ function main() {
 	SLL.remove('Tauhida');
 	// console.log(JSON.stringify(SLL));
 	// console.log(display(SLL.head))
-	size(SLL)
-	isEmpty(SLL);
-	isEmpty(TOO);
-	console.log(findPrevious(SLL, 'Hotdog'))
-
+	// size(SLL)
+	// isEmpty(SLL);
+	// isEmpty(TOO);
+	// console.log(findPrevious(SLL, 'Hotdog'))
+	//	console.log(findLast(SLL))
+	console.log(JSON.stringify(reverseIt(SLL,SLL.head)))
 }
 
 main()

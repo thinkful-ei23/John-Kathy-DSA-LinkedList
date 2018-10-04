@@ -1,3 +1,5 @@
+const Node = require('./Node')
+
 function display(currentNode) {
     if (currentNode.next === null) {
         return currentNode.value
@@ -41,5 +43,30 @@ function findPrevious(list, node) {
     return previousNode
 }
 
+function findLast(list){
+    let currentNode = list.head
 
-module.exports = { display, size, isEmpty, findPrevious }
+    if(list.head === null){
+        return null
+    }
+    while(currentNode.next != null){
+        currentNode = currentNode.next
+    }
+    return currentNode
+}
+
+//find the last in the list
+// if .next === null this.head === currentNode
+//set .next to currentNode
+
+function reverseIt(list,currentNode){
+    let previousNode = currentNode.next
+    if(currentNode.next === null){
+        return list.head = new Node(currentNode, previousNode)
+    }
+    console.log(previousNode.value)
+    return new Node(currentNode, previousNode), reverseIt(list,currentNode.next)
+}
+
+
+module.exports = { display, size, isEmpty, findPrevious,findLast,reverseIt }
