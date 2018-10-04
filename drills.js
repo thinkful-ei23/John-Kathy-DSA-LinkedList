@@ -1,6 +1,7 @@
 'use strict'
 
 const LinkedList = require('./Single-LinkedList');
+const {display,size} = require('./free-functions')
 
 
 function main() {
@@ -20,8 +21,9 @@ function main() {
 	SLL.insertAfter('Hotdog', 'Helo');
 	SLL.insertAt('Kat', 3);
 	SLL.remove('Tauhida');
-	console.log(JSON.stringify(SLL));
-
+	// console.log(JSON.stringify(SLL));
+	console.log(display(SLL.head))
+	size(SLL)
 }
 
 main()
